@@ -1,0 +1,13 @@
+# Smart home integrations: reliability patterns that matter
+
+Smart home UX falls apart when devices don't respond or states drift. The most important improvements are invisible: reconnect logic, debouncing, and event replay.
+
+## Patterns I rely on
+
+- Backoff on polling and honor vendor rate limits.
+- Confirm state changes with device events when possible.
+- Store last-known-good state for fast UI updates.
+
+## The result
+
+Devices feel native because they recover quickly and stay honest about what they can do.

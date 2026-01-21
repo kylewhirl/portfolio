@@ -1,0 +1,10 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F5FBFF"/>
+  <rect x="120" y="120" width="960" height="560" rx="40" fill="#E1F1FF"/>
+  <rect x="180" y="190" width="360" height="360" rx="28" fill="#FFFFFF"/>
+  <rect x="580" y="190" width="420" height="40" rx="20" fill="#CFE6FF"/>
+  <rect x="580" y="250" width="300" height="16" rx="8" fill="#D6EBFF"/>
+  <rect x="580" y="290" width="340" height="16" rx="8" fill="#D6EBFF"/>
+  <rect x="580" y="360" width="420" height="200" rx="24" fill="#FFFFFF"/>
+  <text x="180" y="620" fill="#9BB7E5" font-family="Inter, Arial" font-size="24">TODO: Replace with tqrco.de UI screenshots</text>
+</svg>

@@ -1,0 +1,13 @@
+# Idempotency keys and why integrations fail in the real world
+
+Integrations break when retries collide with side effects. Idempotency is the guardrail that keeps vendor APIs from double-charging, double-fulfilling, or double-creating customer data.
+
+## The practical pattern
+
+- Create a deterministic key for each action.
+- Store it alongside the vendor call and result.
+- On retries, return the original response without re-running the action.
+
+## The payoff
+
+When you combine idempotency with reconciliation jobs, you get a system that can retry safely and explain what happened later.
