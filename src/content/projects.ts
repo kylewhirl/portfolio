@@ -84,6 +84,8 @@ export const projects: Project[] = [
       "Playwright",
     ],
     links: [
+      { label: "Admin", href: "https://admin.wvwine.co" },
+      { label: "Events", href: "https://cal.wvwine.co" },
       { label: "GitHub", href: "https://github.com/kylewhirl/vine-admin" },
     ],
     highlights: [
@@ -104,7 +106,11 @@ export const projects: Project[] = [
     screenshots: [
       {
         src: "/projects/vine-admin.png",
-        alt: "Vine Admin GitHub access screen",
+        alt: "Vine Admin sign-in screen",
+      },
+      {
+        src: "/projects/vine-events.png",
+        alt: "Whispering Vine events listing",
       },
     ],
   },
