@@ -40,15 +40,4 @@ export const writingPosts: WritingPost[] = [
     tags: ["Smart Home", "Integrations"],
   },
 ];
-
-export const writingBySlug = {
-  "ops-console-that-managers-actually-use": () =>
-    import("./writing/ops-console-that-managers-actually-use.mdx"),
-  "idempotency-keys": () => import("./writing/idempotency-keys.mdx"),
-  "low-cost-publishing-pipelines": () =>
-    import("./writing/low-cost-publishing-pipelines.mdx"),
-  "smart-home-reliability-patterns": () =>
-    import("./writing/smart-home-reliability-patterns.mdx"),
-};
-
-export type WritingSlug = keyof typeof writingBySlug;
+export type WritingSlug = (typeof writingPosts)[number]["slug"];

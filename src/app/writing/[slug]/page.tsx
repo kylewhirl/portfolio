@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { writingPosts, writingBySlug, WritingSlug } from "@/content/writing";
+import { writingPosts, WritingSlug } from "@/content/writing";
 import { SectionHeading } from "@/components/section-heading";
+import { loadMdxComponent } from "@/lib/mdx";
 
 type Params = { slug: WritingSlug };
 
@@ -19,16 +20,12 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 }
 
 export default async function WritingPostPage({ params }: { params: Params }) {
-  const loader = writingBySlug[params.slug];
-  if (!loader) {
-    notFound();
-  }
-  const Post = (await loader()).default;
   const post = writingPosts.find((item) => item.slug === params.slug);
-
   if (!post) {
     notFound();
   }
+
+  const Post = await loadMdxComponent(params.slug);
 
   return (
     <div className="mx-auto w-full max-w-4xl px-6 pb-20">
