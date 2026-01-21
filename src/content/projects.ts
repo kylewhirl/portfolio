@@ -14,7 +14,7 @@ export type Project = {
   problem: string;
   solution: string;
   whatIMostProudOf: string[];
-  screenshots?: { src: string; alt: string }[];
+  screenshots?: { src: string; alt: string; className?: string }[];
 };
 
 export const projects: Project[] = [
@@ -57,6 +57,7 @@ export const projects: Project[] = [
       {
         src: "/projects/rewrapped.png",
         alt: "Rewrapped landing page",
+        className: "object-top",
       },
     ],
   },
@@ -149,6 +150,7 @@ export const projects: Project[] = [
       {
         src: "/projects/tqrco.png",
         alt: "tqrco.de landing page",
+        className: "object-top",
       },
     ],
   },

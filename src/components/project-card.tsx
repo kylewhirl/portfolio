@@ -19,6 +19,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function ProjectCard({ project }: { project: Project }) {
   const visibleStack = project.stack.slice(0, 4);
@@ -56,7 +57,10 @@ export function ProjectCard({ project }: { project: Project }) {
               alt={project.screenshots[0].alt}
               width={800}
               height={500}
-              className="h-44 w-full object-cover"
+              className={cn(
+                "h-44 w-full object-cover",
+                project.screenshots[0].className
+              )}
             />
           </div>
         ) : null}
