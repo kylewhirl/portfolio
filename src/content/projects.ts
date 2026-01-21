@@ -41,7 +41,9 @@ export const projects: Project[] = [
       "Browserless",
       "Playwright",
     ],
-    links: [],
+    links: [
+      { label: "GitHub", href: "https://github.com/kylewhirl/vine-admin" },
+    ],
     highlights: [
       "Saved ~10 hours/week for operations",
       "Used across 2 store locations by manager team",
@@ -57,11 +59,10 @@ export const projects: Project[] = [
       "Shipping features end-to-end (UX -> API -> deploy -> iteration)",
       "Building reliable integrations and realtime updates",
     ],
-    // TODO: Replace placeholder with blurred/redacted screenshots.
     screenshots: [
       {
-        src: "/projects/vine-admin-placeholder.svg",
-        alt: "Vine Admin blurred dashboard placeholder",
+        src: "/projects/vine-admin.png",
+        alt: "Vine Admin GitHub access screen",
       },
     ],
   },
@@ -96,11 +97,10 @@ export const projects: Project[] = [
       "Shipping a product people can use immediately",
       "Data model + analytics pipeline simplicity",
     ],
-    // TODO: Replace placeholder with product screenshots.
     screenshots: [
       {
-        src: "/projects/tqrco-placeholder.svg",
-        alt: "tqrco.de placeholder",
+        src: "/projects/tqrco.png",
+        alt: "tqrco.de landing page",
       },
     ],
   },
@@ -117,7 +117,10 @@ export const projects: Project[] = [
       "TypeScript",
       "Content pipelines",
     ],
-    links: [{ label: "Site", href: "https://dinowalls.app" }],
+    links: [
+      { label: "Site", href: "https://dinowalls.app" },
+      { label: "GitHub", href: "https://github.com/kylewhirl/dinowalls" },
+    ],
     highlights: [
       "Time-based dynamic wallpaper sets",
       "Profiles + likes + custom feeds",
@@ -130,11 +133,10 @@ export const projects: Project[] = [
       "Product vision + UX polish",
       "End-to-end shipping (app + backend + content systems)",
     ],
-    // TODO: Replace placeholder with in-app screenshots.
     screenshots: [
       {
-        src: "/projects/dinowalls-placeholder.svg",
-        alt: "Dinowalls placeholder",
+        src: "/projects/dinowalls.png",
+        alt: "Dinowalls landing page",
       },
     ],
   },
@@ -155,7 +157,12 @@ export const projects: Project[] = [
       "Webhooks",
       "Realtime events",
     ],
-    links: [],
+    links: [
+      { label: "Scrypted", href: "https://github.com/kylewhirl/scrypted-simplisafe" },
+      { label: "Homebridge Tovala", href: "https://github.com/kylewhirl/homebridge-tovala" },
+      { label: "Homebridge Moonside", href: "https://github.com/kylewhirl/homebridge-moonside" },
+      { label: "Home Assistant", href: "https://github.com/kylewhirl/home-assistant" },
+    ],
     highlights: [
       "Home Assistant contributions and custom integrations",
       "Homebridge plugins for Tovala and Moonside lighting",
@@ -171,11 +178,10 @@ export const projects: Project[] = [
       "Keeping integrations crisp and maintainable in TypeScript",
       "Shipping improvements that I use every day at home",
     ],
-    // TODO: Replace placeholder with redacted integration dashboards.
     screenshots: [
       {
-        src: "/projects/smart-home-placeholder.svg",
-        alt: "Smart home integrations placeholder",
+        src: "/projects/smart-home.png",
+        alt: "Scrypted SimpliSafe GitHub repository preview",
       },
     ],
   },
@@ -187,3 +193,10 @@ export const projectCategories: ProjectCategory[] = [
   "Integrations",
   "Product",
 ];
+
+export function getProjectPrimaryLink(project: Project) {
+  if (!project.links.length) return null;
+  const site = project.links.find((link) => link.label === "Site");
+  const github = project.links.find((link) => link.label === "GitHub");
+  return site ?? github ?? project.links[0];
+}

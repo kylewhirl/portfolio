@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CalloutCTA } from "@/components/callout-cta";
-import { projects } from "@/content/projects";
+import { getProjectPrimaryLink, projects } from "@/content/projects";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 
 const featuredSlugs = ["vine-admin", "smart-home-integrations", "tqrco"];
@@ -67,32 +67,42 @@ export default function Home() {
           description="A snapshot of the systems and products I&apos;ve built end-to-end."
         />
         <div className="grid gap-6 md:grid-cols-3">
-          {featured.map((project) => (
-            <Card
-              key={project.slug}
-              className="rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl"
-            >
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  {project.category.map((cat) => (
-                    <Badge key={cat} variant="outline" className="rounded-full">
-                      {cat}
-                    </Badge>
-                  ))}
-                </div>
-                <h3 className="text-xl font-semibold tracking-tight">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-foreground/70">{project.tagline}</p>
-                <Button asChild variant="ghost" className="rounded-full px-0">
-                  <Link href={`/projects#${project.slug}`}>
-                    View project
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+          {featured.map((project) => {
+            const primaryLink = getProjectPrimaryLink(project);
+            const href = primaryLink?.href ?? `/projects#${project.slug}`;
+            const isExternal = href.startsWith("http");
+
+            return (
+              <Card
+                key={project.slug}
+                className="rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl"
+              >
+                <CardContent className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.category.map((cat) => (
+                      <Badge key={cat} variant="outline" className="rounded-full">
+                        {cat}
+                      </Badge>
+                    ))}
+                  </div>
+                  <h3 className="text-xl font-semibold tracking-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-foreground/70">{project.tagline}</p>
+                  <Button asChild variant="ghost" className="rounded-full px-0">
+                    <Link
+                      href={href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noreferrer" : undefined}
+                    >
+                      View project
+                      <ArrowUpRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </section>
 

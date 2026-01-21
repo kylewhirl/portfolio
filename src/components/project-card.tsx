@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "@/content/projects";
+import { getProjectPrimaryLink, Project } from "@/content/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +23,7 @@ import { ArrowUpRight } from "lucide-react";
 export function ProjectCard({ project }: { project: Project }) {
   const visibleStack = project.stack.slice(0, 4);
   const hiddenStack = project.stack.slice(4);
+  const primaryLink = getProjectPrimaryLink(project);
 
   return (
     <Card
@@ -99,6 +100,14 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         ) : null}
         <div className="flex flex-wrap items-center gap-3">
+          {primaryLink ? (
+            <Button asChild className="rounded-full">
+              <Link href={primaryLink.href} target="_blank" rel="noreferrer">
+                Open project
+                <ArrowUpRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          ) : null}
           <Button asChild variant="outline" className="rounded-full">
             <Link href={`/projects#${project.slug}`}>
               Read case study

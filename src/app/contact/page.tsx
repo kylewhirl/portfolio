@@ -37,7 +37,9 @@ export default function ContactPage() {
             </div>
             <div className="flex flex-wrap gap-3">
               <Button asChild variant="outline" className="rounded-full">
-                <Link href="https://github.com/kylewhirl">GitHub</Link>
+                <Link href="https://github.com/kylewhirl" target="_blank" rel="noreferrer">
+                  GitHub
+                </Link>
               </Button>
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/projects">View projects</Link>
