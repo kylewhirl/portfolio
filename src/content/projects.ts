@@ -19,6 +19,48 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "rewrapped",
+    title: "Rewrapped",
+    tagline: "Your Spotify Wrapped, all year long.",
+    category: ["Product", "Integrations", "Frontend"],
+    status: "Active",
+    role: "Creator",
+    stack: [
+      "Next.js (App Router)",
+      "TypeScript",
+      "Tailwind",
+      "shadcn/ui",
+      "lucide-react",
+      "Spotify OAuth",
+      "iOS Shortcuts",
+    ],
+    links: [
+      { label: "Site", href: "https://rewrapped.kylewhirl.com" },
+      { label: "App Store", href: "https://apps.apple.com/us/app/rewrapped/id6754272094" },
+      { label: "GitHub", href: "https://github.com/kylewhirl/rewrapped" },
+    ],
+    highlights: [
+      "Automatically updated playlists across short, medium, and long-term windows",
+      "Instant access to Wrapped-style insights without waiting for December",
+      "Simple iOS experience with playlist refresh shortcuts",
+    ],
+    problem:
+      "Spotify Wrapped arrives once a year, leaving the rest of the year without the same sense of musical insight.",
+    solution:
+      "Rewrapped keeps Wrapped-style playlists updated year-round with a clean iOS experience and Spotify OAuth flows.",
+    whatIMostProudOf: [
+      "Shipping a delightful iOS experience with lightweight authentication",
+      "Turning a seasonal habit into a daily product",
+      "Keeping playlist updates simple and reliable",
+    ],
+    screenshots: [
+      {
+        src: "/projects/rewrapped.png",
+        alt: "Rewrapped landing page",
+      },
+    ],
+  },
+  {
     slug: "vine-admin",
     title: "Vine Admin",
     tagline:
