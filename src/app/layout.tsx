@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Fraunces, Public_Sans } from "next/font/google";
+import { Manrope, Public_Sans } from "next/font/google";
 import "./globals.css";
+import "./studio-v2.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 
-const fraunces = Fraunces({
+const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-display",
@@ -48,7 +49,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fraunces.variable} ${publicSans.variable} font-sans antialiased`}>
+      <body className={`${manrope.variable} ${publicSans.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <div className="site-shell min-h-screen text-foreground">
             <SiteNav />

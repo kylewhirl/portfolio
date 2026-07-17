@@ -1,0 +1,854 @@
+.folio {
+  --ink: #18352a;
+  --ink-soft: #526158;
+  --paper: #f8f8f4;
+  --green: #214c38;
+  --green-soft: #dce7dc;
+  --oak: #c79d69;
+  --line: rgba(24, 53, 42, 0.16);
+  --image-x: 0px;
+  --image-y: 0px;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body:has(.folio) .site-shell {
+  background: #f8f8f4;
+}
+
+body:has(.folio) header {
+  border-color: rgba(24, 53, 42, 0.12);
+  background: rgba(248, 248, 244, 0.88);
+}
+
+body:has(.folio) header .font-display {
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.folio-hero {
+  position: relative;
+  min-height: min(820px, calc(100svh - 7.5rem));
+  margin: 0 clamp(0.75rem, 2vw, 2rem) clamp(0.75rem, 2vw, 2rem);
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #e8e2d8;
+}
+
+.folio-hero-image {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.025) translate(var(--image-x), var(--image-y));
+  transition: transform 450ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.folio-hero-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(247, 245, 238, 0.98) 0%, rgba(247, 245, 238, 0.91) 31%, rgba(247, 245, 238, 0.35) 55%, transparent 74%),
+    linear-gradient(0deg, rgba(13, 35, 25, 0.2), transparent 28%);
+}
+
+.folio-hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: inherit;
+  max-width: 50rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 7vw, 7rem);
+}
+
+.folio-status {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #4d6155;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.folio-status span {
+  position: relative;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: #5f8d5b;
+  box-shadow: 0 0 0 5px rgba(95, 141, 91, 0.14);
+}
+
+.folio-hero h1 {
+  max-width: 10ch;
+  margin-top: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 7.3vw, 7.8rem);
+  font-weight: 560;
+  letter-spacing: -0.075em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.folio-hero-content > p {
+  max-width: 35rem;
+  margin-top: 2rem;
+  color: #43554c;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.65;
+}
+
+.folio-hero-actions,
+.folio-contact > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.35rem;
+  margin-top: 2.25rem;
+}
+
+.folio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 3.2rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+  font-size: 0.82rem;
+  font-weight: 720;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.folio-button:hover {
+  transform: translateY(-2px);
+}
+
+.folio-button svg,
+.folio-text-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.folio-button-dark {
+  background: var(--ink);
+  color: white;
+}
+
+.folio-button-dark:hover {
+  background: #2e5a43;
+}
+
+.folio-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 720;
+}
+
+.folio-text-link svg {
+  transition: transform 180ms ease;
+}
+
+.folio-text-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.folio-hero-note {
+  position: absolute;
+  z-index: 2;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  background: rgba(248, 248, 244, 0.74);
+  padding: 0.8rem 1rem;
+  color: #3e5147;
+  font-size: 0.68rem;
+  font-weight: 660;
+  backdrop-filter: blur(18px);
+}
+
+.folio-hero-note svg {
+  width: 1rem;
+  height: 1rem;
+  color: #4f754f;
+}
+
+.folio-hero-note span + span::before {
+  margin-right: 1rem;
+  color: rgba(24, 53, 42, 0.28);
+  content: "/";
+}
+
+.folio-proof {
+  display: grid;
+  max-width: 1420px;
+  grid-template-columns: 0.8fr 2.2fr;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.folio-proof > p,
+.folio-eyebrow {
+  color: #6c796f;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.folio-proof > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.folio-proof > div span {
+  border-left: 1px solid var(--line);
+  padding: 0 1.25rem;
+  color: #69756d;
+  font-size: 0.73rem;
+  line-height: 1.45;
+}
+
+.folio-proof strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+
+.folio-intro {
+  display: grid;
+  max-width: 1420px;
+  grid-template-columns: 0.62fr 2.38fr;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: clamp(5rem, 10vw, 10rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.folio-intro > div {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: end;
+}
+
+.folio-intro h2,
+.folio-section-heading h2,
+.folio-lab h2,
+.folio-contact h2 {
+  font-family: var(--font-display);
+  font-weight: 570;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.folio-intro h2 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 5.5vw, 6rem);
+}
+
+.folio-intro > div > p {
+  max-width: 28rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.folio-work {
+  padding: clamp(5rem, 8vw, 8rem) max(1.5rem, calc((100vw - 1420px) / 2 + 5rem));
+  background: #eef1eb;
+}
+
+.folio-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.25rem;
+}
+
+.folio-section-heading h2 {
+  margin-top: 1rem;
+  font-size: clamp(2.8rem, 4.8vw, 5rem);
+}
+
+.folio-project-arrows {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.folio-project-arrows button {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.folio-project-arrows button:hover {
+  background: var(--ink);
+  color: white;
+}
+
+.folio-project-arrows svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.folio-showroom {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.54fr) minmax(0, 2.46fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(37, 57, 45, 0.08);
+}
+
+.folio-project-nav {
+  border-right: 1px solid var(--line);
+}
+
+.folio-project-nav button {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.8rem;
+  border-bottom: 1px solid var(--line);
+  padding: 1.25rem;
+  color: #7b867f;
+  text-align: left;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.folio-project-nav button:last-child {
+  border-bottom: 0;
+}
+
+.folio-project-nav button:hover {
+  color: var(--ink);
+}
+
+.folio-project-nav button.is-active {
+  background: var(--green);
+  color: #fff;
+}
+
+.folio-project-nav button > span {
+  grid-row: 1 / 3;
+  padding-top: 0.15rem;
+  font-size: 0.58rem;
+  font-weight: 750;
+}
+
+.folio-project-nav strong {
+  font-size: 0.92rem;
+  font-weight: 690;
+}
+
+.folio-project-nav small {
+  font-size: 0.62rem;
+  opacity: 0.65;
+}
+
+.folio-project {
+  display: grid;
+  min-height: 36rem;
+  grid-template-columns: minmax(0, 1.35fr) minmax(19rem, 0.65fr);
+  animation: folio-project-in 360ms ease both;
+}
+
+@keyframes folio-project-in {
+  from { opacity: 0; transform: translateY(7px); }
+}
+
+.folio-project-visual {
+  position: relative;
+  min-height: 36rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #d8e2d4, #c09a68);
+}
+
+.folio-project-visual img {
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.folio-project:hover .folio-project-visual img {
+  transform: scale(1.025);
+}
+
+.folio-project-number {
+  position: absolute;
+  right: 1rem;
+  bottom: -1.5rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  text-shadow: 0 3px 25px rgba(10, 25, 17, 0.2);
+}
+
+.folio-project-info {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.folio-project-info > div:first-child > p {
+  color: #718078;
+  font-size: 0.62rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.folio-project-info h3 {
+  margin-top: 0.8rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  font-weight: 620;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.folio-project-info > div:first-child > span {
+  display: block;
+  margin-top: 0.9rem;
+  color: #647168;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.folio-project-info ul {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.folio-project-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: #4f5e55;
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.folio-project-info li svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  color: #6f9663;
+}
+
+.folio-project-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.folio-project-footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.folio-project-footer > div span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.5rem;
+  color: #6a786f;
+  font-size: 0.58rem;
+}
+
+.folio-project-footer > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  font-size: 0.76rem;
+  font-weight: 730;
+}
+
+.folio-project-footer > a svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.folio-disciplines {
+  padding: clamp(6rem, 10vw, 10rem) max(1.5rem, calc((100vw - 1420px) / 2 + 5rem));
+}
+
+.folio-discipline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-block: 1px solid var(--line);
+}
+
+.folio-discipline-grid article {
+  min-height: 25rem;
+  border-right: 1px solid var(--line);
+  padding: 2rem clamp(1.5rem, 3vw, 3rem) 2rem 0;
+}
+
+.folio-discipline-grid article + article {
+  padding-left: clamp(1.5rem, 3vw, 3rem);
+}
+
+.folio-discipline-grid article:last-child {
+  border-right: 0;
+}
+
+.folio-discipline-grid article > span {
+  color: #879189;
+  font-size: 0.62rem;
+  font-weight: 720;
+}
+
+.folio-discipline-grid h3 {
+  margin-top: 4.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.3vw, 3.4rem);
+  font-weight: 610;
+  letter-spacing: -0.055em;
+}
+
+.folio-discipline-grid p {
+  max-width: 24rem;
+  margin-top: 1.2rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.folio-discipline-grid article > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 2rem;
+}
+
+.folio-discipline-grid small {
+  border-radius: 999px;
+  background: #edf0e9;
+  padding: 0.4rem 0.6rem;
+  color: #657269;
+  font-size: 0.6rem;
+}
+
+.folio-lab {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: clamp(3rem, 8vw, 9rem);
+  padding: clamp(6rem, 10vw, 10rem) max(1.5rem, calc((100vw - 1420px) / 2 + 5rem));
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15), transparent),
+    repeating-linear-gradient(90deg, transparent 0 58px, rgba(84, 55, 24, 0.07) 59px 60px),
+    #cda673;
+}
+
+.folio-lab h2 {
+  max-width: 12ch;
+  margin-top: 1.2rem;
+  font-size: clamp(2.8rem, 4.8vw, 5rem);
+}
+
+.folio-lab-copy > p:last-child {
+  max-width: 30rem;
+  margin-top: 1.5rem;
+  color: #4d5a51;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.folio-lab-list {
+  border-top: 1px solid rgba(24, 53, 42, 0.25);
+}
+
+.folio-lab-list > a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(24, 53, 42, 0.25);
+  padding: 2rem 0;
+}
+
+.folio-lab-list > a > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 180ms ease;
+}
+
+.folio-lab-list > a:hover > svg {
+  transform: translate(3px, -3px);
+}
+
+.folio-lab-list span {
+  color: rgba(24, 53, 42, 0.65);
+  font-size: 0.6rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.folio-lab-list h3 {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+
+.folio-lab-list p {
+  max-width: 38rem;
+  margin-top: 0.5rem;
+  color: #4d5a51;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.folio-contact {
+  display: flex;
+  min-height: 65svh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+  background: var(--green);
+  color: #f4f7f1;
+  text-align: center;
+}
+
+.folio-contact .folio-eyebrow {
+  color: rgba(244, 247, 241, 0.56);
+}
+
+.folio-contact h2 {
+  margin-top: 1.4rem;
+  font-size: clamp(3.5rem, 7.8vw, 8rem);
+}
+
+.folio-contact > div {
+  justify-content: center;
+}
+
+.folio-button-light {
+  background: #f4f7f1;
+  color: var(--green);
+}
+
+.folio-text-link-light {
+  color: #f4f7f1;
+}
+
+@media (max-width: 980px) {
+  .folio-hero {
+    min-height: 760px;
+  }
+
+  .folio-hero-wash {
+    background: linear-gradient(90deg, rgba(247, 245, 238, 0.96), rgba(247, 245, 238, 0.72) 52%, rgba(247, 245, 238, 0.1));
+  }
+
+  .folio-hero-content {
+    max-width: 42rem;
+  }
+
+  .folio-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .folio-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .folio-showroom {
+    grid-template-columns: 1fr;
+  }
+
+  .folio-project-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .folio-project-nav button {
+    display: block;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .folio-project-nav button > span {
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+
+  .folio-project-nav small {
+    display: none;
+  }
+
+  .folio-lab {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body:has(.folio) main {
+    padding-top: 5.25rem;
+  }
+
+  .folio-hero {
+    min-height: 690px;
+    margin: 0 0.6rem 0.6rem;
+    border-radius: 0.9rem;
+  }
+
+  .folio-hero-image {
+    object-position: 68% center;
+  }
+
+  .folio-hero-wash {
+    background:
+      linear-gradient(180deg, rgba(247, 245, 238, 0.96) 0%, rgba(247, 245, 238, 0.88) 42%, rgba(247, 245, 238, 0.22) 72%, rgba(18, 39, 28, 0.3) 100%);
+  }
+
+  .folio-hero-content {
+    min-height: 690px;
+    justify-content: flex-start;
+    padding: 2.2rem 1.5rem;
+  }
+
+  .folio-hero h1 {
+    max-width: 9ch;
+    margin-top: 1.6rem;
+    font-size: clamp(3.25rem, 15vw, 4.4rem);
+    letter-spacing: -0.07em;
+  }
+
+  .folio-hero-content > p {
+    max-width: 26rem;
+    margin-top: 1.35rem;
+    font-size: 0.92rem;
+  }
+
+  .folio-hero-actions {
+    margin-top: 1.4rem;
+  }
+
+  .folio-hero-note {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    justify-content: center;
+  }
+
+  .folio-hero-note span:nth-of-type(2),
+  .folio-hero-note span:nth-of-type(3) {
+    display: none;
+  }
+
+  .folio-proof > div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 0;
+  }
+
+  .folio-intro > div {
+    grid-template-columns: 1fr;
+  }
+
+  .folio-intro h2,
+  .folio-section-heading h2 {
+    font-size: 2.75rem;
+  }
+
+  .folio-section-heading {
+    align-items: start;
+  }
+
+  .folio-work,
+  .folio-disciplines,
+  .folio-lab {
+    padding-inline: 1rem;
+  }
+
+  .folio-project-nav {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .folio-project-nav button {
+    min-width: 8.25rem;
+    padding: 1rem;
+  }
+
+  .folio-project {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .folio-project-visual {
+    min-height: 18rem;
+  }
+
+  .folio-project-info {
+    min-height: 28rem;
+  }
+
+  .folio-discipline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .folio-discipline-grid article,
+  .folio-discipline-grid article + article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 2rem 0;
+  }
+
+  .folio-discipline-grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .folio-discipline-grid h3 {
+    margin-top: 2rem;
+  }
+
+  .folio-contact {
+    min-height: 60svh;
+  }
+
+  .folio-contact h2 {
+    font-size: 3.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folio-hero-image,
+  .folio-project-visual img {
+    transform: none !important;
+  }
+}
