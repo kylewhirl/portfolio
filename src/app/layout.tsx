@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 
-const inter = Inter({
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+});
+
+const publicSans = Public_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
@@ -14,15 +20,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kyleworrall.com"),
   title: {
-    default: "Kyle Worrall - Smart Integrations & UI",
-    template: "%s - Kyle Worrall",
+    default: "Kyle Worrall — Product Engineer",
+    template: "%s — Kyle Worrall",
   },
   description:
-    "Next.js + TypeScript engineer focused on smart home tech, dashboards, and integration-heavy products.",
+    "Kyle Worrall is a product-minded engineer building thoughtful interfaces, integrations, and real-world systems.",
   openGraph: {
-    title: "Kyle Worrall - Smart Integrations & UI",
+    title: "Kyle Worrall — Product Engineer",
     description:
-      "I build smart integrations and clean UI for real-world systems.",
+      "Product-minded engineering for systems that live beyond the screen.",
     url: "https://kyleworrall.com",
     siteName: "Kyle Worrall",
     locale: "en_US",
@@ -30,14 +36,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kyle Worrall - Smart Integrations & UI",
+    title: "Kyle Worrall — Product Engineer",
     description:
-      "I build smart integrations and clean UI for real-world systems.",
+      "Product-minded engineering for systems that live beyond the screen.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -45,11 +48,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <div className="min-h-screen bg-background text-foreground">
+      <body className={`${fraunces.variable} ${publicSans.variable} font-sans antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <div className="site-shell min-h-screen text-foreground">
             <SiteNav />
-            <main className="pt-24">{children}</main>
+            <main className="pt-24 sm:pt-28">{children}</main>
             <SiteFooter />
           </div>
         </ThemeProvider>

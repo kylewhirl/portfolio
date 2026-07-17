@@ -19,6 +19,58 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "homeassistant-moonside",
+    title: "Moonside for Home Assistant",
+    tagline:
+      "A native Home Assistant integration with realtime device state, resilient authentication, and theme controls.",
+    category: ["Smart Home", "Integrations", "Product"],
+    status: "Open Source",
+    role: "Creator & maintainer",
+    stack: ["Python", "Home Assistant", "Firebase", "SSE"],
+    links: [
+      { label: "GitHub", href: "https://github.com/kylewhirl/homeassistant-moonside" },
+    ],
+    highlights: [
+      "Native light entities with power, brightness, and color controls",
+      "Realtime Firebase event stream with polling fallback",
+      "Config flows, token refresh, translations, and HACS installation",
+    ],
+    problem:
+      "Moonside lighting had no native Home Assistant integration, leaving device state and theme controls isolated from automations.",
+    solution:
+      "A purpose-built integration that mirrors device state in realtime and exposes lighting themes as native Home Assistant controls.",
+    whatIMostProudOf: [
+      "Reverse-engineering a reliable device integration from real API behavior",
+      "Following Home Assistant conventions so the result feels native",
+    ],
+  },
+  {
+    slug: "snapswitch",
+    title: "SnapSwitch",
+    tagline:
+      "A focused iOS utility that turns the iPhone Camera Control button into a launcher for any Shortcut.",
+    category: ["Product", "Frontend", "Integrations"],
+    status: "Open Source",
+    role: "Creator",
+    stack: ["Swift", "SwiftUI", "App Intents", "iOS"],
+    links: [
+      { label: "GitHub", href: "https://github.com/kylewhirl/SnapSwitch" },
+    ],
+    highlights: [
+      "Camera Control and Locked Camera Capture integration",
+      "Immediate handoff to a user-configured Shortcut",
+      "Private, local-only settings with no backend",
+    ],
+    problem:
+      "The iPhone Camera Control button is useful hardware, but its launch options are intentionally narrow.",
+    solution:
+      "A tiny native bridge that lets Camera Control trigger the much larger ecosystem of iOS Shortcuts.",
+    whatIMostProudOf: [
+      "A tight product premise with almost no interface overhead",
+      "Connecting new iOS hardware APIs to a familiar automation system",
+    ],
+  },
+  {
     slug: "rewrapped",
     title: "Rewrapped",
     tagline: "Your Spotify Wrapped, all year long.",

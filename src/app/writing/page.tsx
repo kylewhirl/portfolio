@@ -23,7 +23,7 @@ export default function WritingPage() {
           {writingPosts.map((post) => (
             <Card
               key={post.slug}
-              className="rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl"
+              className="rounded-sm border-[#d5d3c8] bg-[#fbfaf5] shadow-[0_16px_45px_rgba(59,49,36,0.08)] transition hover:border-[#8ca07b]"
             >
               <CardContent className="space-y-4">
                 <div className="flex flex-wrap gap-2">
@@ -46,7 +46,7 @@ export default function WritingPage() {
                 <p className="text-sm text-foreground/70">{post.excerpt}</p>
                 <Link
                   href={`/writing/${post.slug}`}
-                  className="text-sm font-semibold text-sky-600"
+                  className="text-sm font-semibold text-[#31543e]"
                 >
                   Read article
                 </Link>
