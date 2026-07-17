@@ -75,7 +75,7 @@ export default function IntegrationsPage() {
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="rounded-full border border-white/30 bg-white/60 px-4 py-2 text-sm data-[state=active]:bg-white data-[state=active]:text-foreground"
+                  className="rounded-full border border-[#d2d4c8] bg-[#f7f6f0] px-4 py-2 text-sm data-[state=active]:bg-[#244a35] data-[state=active]:text-white"
                 >
                   {tab.label}
                 </TabsTrigger>

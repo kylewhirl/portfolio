@@ -19,20 +19,20 @@ export default function AboutPage() {
         />
 
         <section className="grid gap-6 md:grid-cols-2">
-          <Card className="rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl">
+          <Card className="rounded-sm border-[#d5d3c8] bg-[#fbfaf5] shadow-[0_18px_50px_rgba(59,49,36,0.08)]">
             <CardContent className="space-y-3">
               <h3 className="text-lg font-semibold tracking-tight">How I work</h3>
               <ul className="space-y-2 text-sm text-foreground/70">
                 {howIWork.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-sky-500" />
+                    <span className="mt-2 h-2 w-2 rounded-full bg-[#638350]" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
-          <Card className="rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl">
+          <Card className="rounded-sm border-[#d5d3c8] bg-[#fbfaf5] shadow-[0_18px_50px_rgba(59,49,36,0.08)]">
             <CardContent className="space-y-4">
               <h3 className="text-lg font-semibold tracking-tight">Strength areas</h3>
               <div className="space-y-3">

@@ -29,21 +29,21 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Card
       id={project.slug}
-      className="group scroll-mt-24 rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl transition hover:-translate-y-1"
+      className="group scroll-mt-24 rounded-sm border-[#d5d3c8] bg-[#fbfaf5] shadow-[0_16px_45px_rgba(59,49,36,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#8ca07b]"
     >
       <CardHeader className="space-y-3">
         <div className="flex items-start justify-between">
           <CardTitle className="text-lg font-semibold tracking-tight">
             {project.title}
           </CardTitle>
-          <Badge variant="secondary" className="rounded-full">
+          <Badge variant="secondary" className="rounded-full bg-[#e6eadf] text-[#31543e]">
             {project.status}
           </Badge>
         </div>
         <p className="text-sm text-foreground/70">{project.tagline}</p>
         <div className="flex flex-wrap gap-2">
           {project.category.map((cat) => (
-            <Badge key={cat} variant="outline" className="rounded-full">
+            <Badge key={cat} variant="outline" className="rounded-full border-[#d5d3c8] text-[#6b705f]">
               {cat}
             </Badge>
           ))}
@@ -51,7 +51,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </CardHeader>
       <CardContent className="space-y-4">
         {project.screenshots?.[0] ? (
-          <div className="overflow-hidden rounded-2xl border border-white/30 bg-white/60">
+          <div className="overflow-hidden rounded-sm border border-[#d5d3c8] bg-[#f3f1e9]">
             <Image
               src={project.screenshots[0].src}
               alt={project.screenshots[0].alt}

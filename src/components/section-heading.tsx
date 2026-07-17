@@ -15,15 +15,15 @@ export function SectionHeading({
   return (
     <div className={cn("space-y-3", className)}>
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">
+        <p className="eyebrow">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+      <h2 className="text-balance font-display text-3xl tracking-[-0.03em] text-[#183a2b] md:text-5xl">
         {title}
       </h2>
       {description ? (
-        <p className="text-balance text-sm text-foreground/70 md:text-base">
+        <p className="max-w-2xl text-balance text-sm leading-7 text-[#666a60] md:text-base">
           {description}
         </p>
       ) : null}

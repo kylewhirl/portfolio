@@ -2,7 +2,7 @@ export const strengths = [
   {
     title: "UI polish",
     description:
-      "Apple-inspired interfaces with focus on clarity, spacing, and trustworthy motion.",
+      "Thoughtful interfaces with a focus on hierarchy, clarity, and trustworthy motion.",
   },
   {
     title: "Integration engineering",

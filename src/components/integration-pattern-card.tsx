@@ -14,7 +14,7 @@ export function IntegrationPatternCard({
   return (
     <Card
       className={cn(
-        "rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl",
+        "rounded-sm border-[#d5d3c8] bg-[#fbfaf5] shadow-[0_16px_45px_rgba(59,49,36,0.08)]",
         className
       )}
     >

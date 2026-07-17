@@ -35,11 +35,11 @@ export function SmartHomeGrid() {
       {smartHomeItems.map((item) => (
         <Card
           key={item.title}
-          className="rounded-2xl border-white/30 bg-white/70 shadow-lg shadow-black/5 backdrop-blur-xl"
+          className="rounded-sm border-[#d5d3c8] bg-[#fbfaf5] shadow-[0_16px_45px_rgba(59,49,36,0.08)]"
         >
           <CardContent className="space-y-3">
             <div className="flex items-center gap-3">
-              <item.icon className="h-5 w-5 text-sky-500" />
+              <item.icon className="h-5 w-5 text-[#638350]" />
               <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>
             </div>
             <p className="text-sm text-foreground/70">{item.description}</p>
