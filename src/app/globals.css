@@ -108,18 +108,12 @@
 }
 
 .site-shell {
-  background-color: #e8dcc8;
+  background-color: #eee8de;
   background-image:
-    linear-gradient(90deg, rgb(91 58 30 / 4%) 1px, transparent 1px),
-    repeating-linear-gradient(
-      2deg,
-      transparent 0,
-      transparent 19px,
-      rgb(95 61 31 / 3%) 20px,
-      transparent 22px
-    ),
-    linear-gradient(102deg, #e8dbc5 0%, #f0e5d3 48%, #e4d4bd 100%);
-  background-size: 25% 100%, 100% 54px, 100% 100%;
+    linear-gradient(rgb(250 249 246 / 56%), rgb(250 249 246 / 56%)),
+    url("/images/oak-white-seamless.webp");
+  background-repeat: repeat;
+  background-size: auto, 1536px 1536px;
 }
 
 .resume-stage {
