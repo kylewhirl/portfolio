@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy } from "@phosphor-icons/react";
 
 export function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = React.useState(false);

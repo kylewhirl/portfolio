@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu } from "lucide-react";
+import { ArrowUpRight, List as Menu } from "@phosphor-icons/react/dist/ssr";
 
 const navLinks = [
   { href: "/projects", label: "Work" },
@@ -31,7 +31,7 @@ export function SiteNav() {
             </Link>
           ))}
           <Link href="/contact" className="nav-contact">
-            Let&apos;s talk <span aria-hidden="true">↗</span>
+            Let&apos;s talk <ArrowUpRight aria-hidden="true" className="size-3.5" />
           </Link>
         </div>
         <DropdownMenu>

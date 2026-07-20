@@ -1,17 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Home, PlugZap, ShieldCheck, Wand2 } from "lucide-react";
+import { House, MagicWand, Plug, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
 
 const smartHomeItems = [
   {
     title: "Home Assistant contributions",
-    icon: Home,
+    icon: House,
     description:
       "Custom integrations that expose device state cleanly, with reconnect logic and resilient polling.",
   },
   {
     title: "Homebridge plugins",
-    icon: PlugZap,
+    icon: Plug,
     description:
       "Tovala + Moonside lighting plugins with rate limits, caching, and reliable TypeScript APIs.",
   },
@@ -23,7 +23,7 @@ const smartHomeItems = [
   },
   {
     title: "Automation shortcuts",
-    icon: Wand2,
+    icon: MagicWand,
     description:
       "Small automations that remove manual steps while keeping control in the UI.",
   },
