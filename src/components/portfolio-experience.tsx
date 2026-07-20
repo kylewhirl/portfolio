@@ -7,11 +7,11 @@ import {
   ArrowDown,
   ArrowUpRight,
   Check,
-  ChevronLeft,
-  ChevronRight,
-  Github,
+  CaretLeft as ChevronLeft,
+  CaretRight as ChevronRight,
+  GithubLogo as Github,
   Leaf,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 import { projects } from "@/content/projects";
 
 const featuredSlugs = ["vine-admin", "tqrco", "rewrapped", "dinowalls"];
