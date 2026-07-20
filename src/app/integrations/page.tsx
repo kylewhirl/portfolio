@@ -122,7 +122,7 @@ export default function IntegrationsPage() {
               </Link>
             </Button>
             <Button asChild variant="outline" className="rounded-full">
-              <Link href="/projects#tqrco">tqrco.de</Link>
+              <Link href="/projects#the-qr-code">the qr code co.</Link>
             </Button>
           </div>
         </section>

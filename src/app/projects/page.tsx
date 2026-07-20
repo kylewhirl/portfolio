@@ -6,7 +6,7 @@ import { SmartHomeGrid } from "@/components/smart-home-grid";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Smart home, frontend, and integration-focused project work.",
+  description: "Products, websites, smart home systems, and integration-focused project work.",
 };
 
 export default function ProjectsPage() {
@@ -15,8 +15,8 @@ export default function ProjectsPage() {
       <div className="space-y-12">
         <SectionHeading
           eyebrow="Projects"
-          title="Systems I&apos;ve shipped"
-          description="Filter by domain or focus area. Each project includes the problem, solution, and the reliability work behind it."
+          title="Products and places I&apos;ve helped bring online"
+          description="Public products, customer-facing websites, and the systems behind them. Filter by the kind of work you want to explore."
         />
         <ProjectsFilter projects={projects} />
         <section className="space-y-6">
