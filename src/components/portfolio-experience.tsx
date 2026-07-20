@@ -14,8 +14,8 @@ import {
 } from "@phosphor-icons/react";
 import { projects } from "@/content/projects";
 
-const featuredSlugs = ["vine-admin", "tqrco", "rewrapped", "dinowalls"];
-const latestSlugs = ["homeassistant-moonside", "snapswitch"];
+const featuredSlugs = ["corksom", "passage", "vine-admin", "the-qr-code"];
+const latestSlugs = ["reform-cue", "homeassistant-moonside", "snapswitch"];
 
 const featured = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
@@ -123,7 +123,7 @@ export function PortfolioExperience() {
           <span><strong>10 hrs</strong> saved every week</span>
           <span><strong>6,500</strong> products managed</span>
           <span><strong>2</strong> retail locations supported</span>
-          <span><strong>5+</strong> shipped products</span>
+          <span><strong>10+</strong> public launches</span>
         </div>
       </section>
 

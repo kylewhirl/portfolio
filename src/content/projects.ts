@@ -1,4 +1,9 @@
-export type ProjectCategory = "Smart Home" | "Frontend" | "Integrations" | "Product";
+export type ProjectCategory =
+  | "Smart Home"
+  | "Frontend"
+  | "Integrations"
+  | "Product"
+  | "Websites";
 export type ProjectStatus = "Shipped" | "Active" | "Open Source";
 
 export type Project = {
@@ -18,6 +23,232 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "corksom",
+    title: "Corksom",
+    tagline:
+      "An intelligent sommelier platform for sharper guest recommendations and smoother hospitality workflows.",
+    category: ["Product", "Integrations", "Frontend"],
+    status: "Active",
+    role: "Product design & engineering",
+    stack: ["Next.js", "TypeScript", "AI workflows", "Hospitality UX"],
+    links: [{ label: "Site", href: "https://corksom.com" }],
+    highlights: [
+      "Turns guest preferences into useful wine recommendations",
+      "Designed around the pace and language of live hospitality",
+      "Balances wine intelligence with a calm, approachable interface",
+    ],
+    problem:
+      "Wine programs hold a huge amount of product knowledge, but translating it into a confident guest recommendation is difficult during service.",
+    solution:
+      "Corksom packages that knowledge into an intelligent sommelier experience built around quick inputs, relevant matches, and hospitality workflows.",
+    whatIMostProudOf: [
+      "Making an AI-assisted workflow feel useful instead of ornamental",
+      "Designing a specialized product around real hospitality context",
+    ],
+    screenshots: [
+      {
+        src: "/projects/corksom.png",
+        alt: "Corksom intelligent sommelier platform",
+        className: "object-top",
+      },
+    ],
+  },
+  {
+    slug: "passage",
+    title: "Passage",
+    tagline:
+      "A focused studio for designing, issuing, and updating cards for Apple Wallet and Google Wallet.",
+    category: ["Product", "Integrations", "Frontend"],
+    status: "Active",
+    role: "Product design & engineering",
+    stack: ["Next.js", "TypeScript", "Apple Wallet", "Google Wallet"],
+    links: [{ label: "Site", href: "https://passage.cards" }],
+    highlights: [
+      "Visual pass builder for both major wallet platforms",
+      "Issuing workflow that takes a card from design to customer",
+      "Update model built for passes that already live on a device",
+    ],
+    problem:
+      "Creating and maintaining wallet passes usually means stitching together certificates, platform-specific schemas, and developer tooling.",
+    solution:
+      "Passage turns that fragmented process into a visual studio for shaping a card, issuing it, and shipping future updates.",
+    whatIMostProudOf: [
+      "Giving a technical infrastructure product a clear visual workflow",
+      "Designing one mental model across Apple Wallet and Google Wallet",
+    ],
+    screenshots: [
+      {
+        src: "/projects/passage.png",
+        alt: "Passage wallet pass studio",
+        className: "object-top",
+      },
+    ],
+  },
+  {
+    slug: "reform-cue",
+    title: "Reform Cue",
+    tagline:
+      "A streamlined interval timer for building and running polished Lagree, HIIT, circuit, and custom classes.",
+    category: ["Product", "Frontend"],
+    status: "Active",
+    role: "Product design & engineering",
+    stack: ["Next.js", "TypeScript", "Interval engine", "Responsive UI"],
+    links: [{ label: "Site", href: "https://reformcue.com" }],
+    highlights: [
+      "Flexible interval builder for several coaching formats",
+      "Presentation view designed to stay legible during a class",
+      "Reusable routines that reduce setup between sessions",
+    ],
+    problem:
+      "Generic timers make instructors mentally translate a class plan while they are also coaching the room.",
+    solution:
+      "Reform Cue makes the routine itself the interface, with a focused builder and a clear run-of-show for live instruction.",
+    whatIMostProudOf: [
+      "Designing for glanceability under physical, time-sensitive conditions",
+      "Keeping a flexible timing engine approachable",
+    ],
+    screenshots: [
+      {
+        src: "/projects/reform-cue.png",
+        alt: "Reform Cue interval timer",
+        className: "object-top",
+      },
+    ],
+  },
+  {
+    slug: "salon-platinum",
+    title: "Salon Platinum",
+    tagline:
+      "A polished service and booking experience for a luxury hair salon in Midtown Reno.",
+    category: ["Websites", "Frontend"],
+    status: "Shipped",
+    role: "Website design & development",
+    stack: ["Web design", "Booking integration", "Local SEO", "Responsive UI"],
+    links: [
+      { label: "Site", href: "https://salonplatinumreno.com" },
+      { label: "GitHub", href: "https://github.com/kylewhirl/salonplatinum" },
+    ],
+    highlights: [
+      "Clear service discovery and booking paths",
+      "Visual system tuned to the salon's premium positioning",
+      "Local-search structure for high-intent Reno customers",
+    ],
+    problem:
+      "The salon needed an online presence that matched the in-person experience and made choosing a service or stylist feel effortless.",
+    solution:
+      "A refined, mobile-first website that leads with the work, clarifies services, and routes visitors directly into booking.",
+    whatIMostProudOf: [
+      "Turning brand atmosphere into a useful conversion experience",
+      "Keeping the path from discovery to booking direct",
+    ],
+    screenshots: [
+      {
+        src: "/projects/salon-platinum.png",
+        alt: "Salon Platinum website",
+        className: "object-top",
+      },
+    ],
+  },
+  {
+    slug: "taco-shop-reno",
+    title: "Taco Shop Reno",
+    tagline:
+      "A lively restaurant site that puts the menu, hours, location, and ordering paths exactly where guests expect them.",
+    category: ["Websites", "Frontend", "Integrations"],
+    status: "Shipped",
+    role: "Website design & development",
+    stack: ["Next.js", "TypeScript", "Ordering links", "Local SEO"],
+    links: [
+      { label: "Site", href: "https://tacoshopreno.com" },
+      { label: "GitHub", href: "https://github.com/kylewhirl/tacoshopreno" },
+    ],
+    highlights: [
+      "Fast mobile access to menu, location, and ordering",
+      "Visual direction built around the restaurant's energy",
+      "Search-ready content for downtown Reno discovery",
+    ],
+    problem:
+      "Restaurant visitors usually arrive with one immediate question—what is on the menu, when are you open, or how do I order—and generic sites bury the answer.",
+    solution:
+      "A direct, energetic website that prioritizes the few actions guests actually need while preserving a strong local identity.",
+    whatIMostProudOf: [
+      "Making the mobile experience genuinely useful at decision time",
+      "Giving a small local business a distinctive digital presence",
+    ],
+    screenshots: [
+      {
+        src: "/projects/taco-shop.png",
+        alt: "Taco Shop Reno website",
+        className: "object-top",
+      },
+    ],
+  },
+  {
+    slug: "whispering-vine",
+    title: "Whispering Vine Wine Co.",
+    tagline:
+      "A hospitality and retail experience for exploring wine, dining, events, and two Reno locations.",
+    category: ["Websites", "Product", "Integrations"],
+    status: "Active",
+    role: "Product, website & operations engineering",
+    stack: ["Next.js", "Content systems", "Events", "Retail operations"],
+    links: [
+      { label: "Site", href: "https://whisperingvinewine.com" },
+      { label: "Admin", href: "https://admin.wvwine.co" },
+    ],
+    highlights: [
+      "Connects wine discovery, dining, events, and store information",
+      "Serves two locations with distinct operational needs",
+      "Shares content and workflows with the internal Vine Admin system",
+    ],
+    problem:
+      "A multi-location wine retailer and restaurant needed a customer experience as rich and current as the operation behind it.",
+    solution:
+      "A hospitality-led public website connected to the same event, catalog, and publishing workflows used by the internal team.",
+    whatIMostProudOf: [
+      "Connecting the public brand experience to real operational systems",
+      "Designing one coherent presence for retail, dining, and events",
+    ],
+    screenshots: [
+      {
+        src: "/projects/whispering-vine.png",
+        alt: "Whispering Vine Wine Co. website",
+        className: "object-top",
+      },
+    ],
+  },
+  {
+    slug: "atlas-landing",
+    title: "Atlas Landing",
+    tagline:
+      "An atmospheric website for a Midtown Reno cocktail bar, with its menu, story, private events, and location up front.",
+    category: ["Websites", "Frontend"],
+    status: "Shipped",
+    role: "Website design & development",
+    stack: ["Web design", "Content strategy", "Responsive UI", "Local SEO"],
+    links: [{ label: "Site", href: "https://atlaslanding.bar" }],
+    highlights: [
+      "Editorial visual direction matched to the physical space",
+      "Clear paths to menus, events, and location details",
+      "Mobile experience designed for guests already out in Midtown",
+    ],
+    problem:
+      "The bar needed a compact digital presence that could communicate atmosphere without making practical details hard to find.",
+    solution:
+      "A moody, image-led site that carries the personality of the room while keeping menus, events, and directions close at hand.",
+    whatIMostProudOf: [
+      "Capturing a physical place without turning the site into a mood board",
+      "Balancing atmosphere and practical guest information",
+    ],
+    screenshots: [
+      {
+        src: "/projects/atlas-landing.png",
+        alt: "Atlas Landing cocktail bar website",
+        className: "object-top",
+      },
+    ],
+  },
   {
     slug: "homeassistant-moonside",
     title: "Moonside for Home Assistant",
@@ -168,9 +399,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "tqrco",
-    title: "tqrco.de",
-    tagline: "Free dynamic QR codes with tracking + analytics.",
+    slug: "the-qr-code",
+    title: "the qr code co.",
+    tagline: "A focused platform for creating, customizing, and managing QR codes without the usual friction.",
     category: ["Frontend", "Integrations", "Product"],
     status: "Active",
     role: "Creator",
@@ -184,14 +415,14 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "GitHub", href: "https://github.com/kylewhirl/qrco" },
-      { label: "Site", href: "https://tqrco.de" },
+      { label: "Site", href: "https://theqrcode.co" },
     ],
     highlights: [
       "Dynamic QR management",
       "Analytics/tracking view",
       "Clean UI focused on speed and clarity",
     ],
-    problem: "Most dynamic QR services are expensive or lock you into a platform.",
+    problem: "Most dynamic QR services are expensive, cluttered, or designed around lock-in.",
     solution:
       "A simple QR platform with dynamic destinations, tracking, and analytics - free and fast.",
     whatIMostProudOf: [
@@ -200,8 +431,8 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/tqrco.png",
-        alt: "tqrco.de landing page",
+        src: "/projects/the-qr-code.png",
+        alt: "the qr code co. landing page",
         className: "object-top",
       },
     ],
@@ -290,10 +521,11 @@ export const projects: Project[] = [
 ];
 
 export const projectCategories: ProjectCategory[] = [
+  "Product",
+  "Websites",
   "Smart Home",
   "Frontend",
   "Integrations",
-  "Product",
 ];
 
 export function getProjectPrimaryLink(project: Project) {
